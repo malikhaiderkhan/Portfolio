@@ -22,6 +22,6 @@ const Portfolio = document.querySelector('#Portfolio');
 const About = document.querySelector('#About');
 const Contact = document.querySelector('#Contact');
 
-Portfolio.addEventListener('click', unPops);
-About.addEventListener('click', unPops);
-Contact.addEventListener('click', unPops);
+Portfolio.addEventListener('click', unPosp);
+About.addEventListener('click', unPosp);
+Contact.addEventListener('click', unPosp);
