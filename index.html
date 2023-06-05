@@ -3,6 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mobile-First</title>
     <link rel="stylesheet" href="style.css">
@@ -82,94 +88,9 @@
     </section>
 
     <section class="portfolio" id="portfolio">
-        <div class="card">
-            <img class="left-card" src="./assets/images/card1.png" alt="card1">
-            <div class="right-card">
-            <h2>Tonic</h2>
-            <div class="xp">
-                <p>Canopy</p>
-                <ul>
-                    <li>Back End Dev</li>
-                    <li>2015</li>
-                </ul>
-            </div>
-            <p class="project-info">A daily selection of privately personalized reads; no accounts or sign-ups required.</p>
-            <ul class="skills">
-                <li class="sbox">HTML</li>
-                <li class="sbox">CSS</li>
-                <li class="sbox">JavaScript</li>
-            </ul>
-
-            <input class="btn" type="button" value="See project">
-        </div>
-        </div>
-
-        <div class="card">
-            <img class="left-card reverse-left" src="./assets/images/card2.png" alt="card2">
-            <div class="right-card reverse-right">
-            <h2>Multi-Post Stories</h2>
-            <div class="xp">
-                <p>Canopy</p>
-                <ul>
-                    <li>Back End Dev</li>
-                    <li>2015</li>
-                </ul>
-            </div>
-            <p class="project-info">A daily selection of privately personalized reads; no accounts or sign-ups required.</p>
-            <ul class="skills">
-                <li class="sbox">HTML</li>
-                <li class="sbox">CSS</li>
-                <li class="sbox">JavaScript</li>
-            </ul>
-
-            <input class="btn" type="button" value="See project">
-        </div>
-        </div>
-
-        <div class="card">
-            <img class="left-card" src="./assets/images/card3.png" alt="card3">
-            <div class="right-card">
-            <h2>Tonic</h2>
-            <div class="xp">
-                <p>Canopy</p>
-                <ul>
-                    <li>Back End Dev</li>
-                    <li>2015</li>
-                </ul>
-            </div>
-            <p class="project-info">A daily selection of privately personalized reads; no accounts or sign-ups required.</p>
-            <ul class="skills">
-                <li class="sbox">HTML</li>
-                <li class="sbox">CSS</li>
-                <li class="sbox">JavaScript</li>
-            </ul>
-
-            <input class="btn" type="button" value="See project">
-        </div>
-        </div>
-
-        <div class="card">
-            <img class="left-card reverse-left" src="./assets/images/card4.png" alt="card4">
-            <div class="right-card reverse-right">
-            <h2>Multi-Post Stories</h2>
-            <div class="xp">
-                <p>Canopy</p>
-                <ul>
-                    <li>Back End Dev</li>
-                    <li>2015</li>
-                </ul>
-            </div>
-            <p class="project-info">A daily selection of privately personalized reads; no accounts or sign-ups required.</p>
-            <ul class="skills">
-                <li class="sbox">HTML</li>
-                <li class="sbox">CSS</li>
-                <li class="sbox">JavaScript</li>
-            </ul>
-
-            <input class="btn" type="button" value="See project">
-        </div>
-        </div>
     </section>
+    
+    <div id="Model" class="popup-model"></div>
 
     <section class="about" id="about">
         <div class="about1">
@@ -247,12 +168,13 @@
                 I’d love to help with it!</p>
                 <form
                 action="https://formspree.io/f/xlekzbgn"
-                method="POST" class="fcontact"
+                method="POST" class="fcontact" id="fcontact"
               >
             <input type="text" name="name" id="name" class="plc" placeholder="Lorem Ipsum" maxlength="30" required>
             <input type="email" name="email" id="email" class="plc" pattern="[^ @]*@[^ @]*" placeholder="loremipsum@gmail.com"  required>
-            <textarea rows="7" cols="30" class="msg" placeholder="Write your messsage here..."  required maxlength="500"></textarea>
+            <textarea rows="7" cols="30" id="msg" class="msg" placeholder="Write your messsage here..."  required maxlength="500"></textarea>
             <button type="submit" id="submit">Get in touch</button>
+            <div id="alert" class="alert"></div>
          </form>
         </section>
     </section>
