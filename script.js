@@ -159,14 +159,14 @@ cardsData.forEach((cardData, index) => {
     popup.setAttribute('class', 'popup');
 
     const section = document.createElement('section');
-    section.setAttribute('class', 'card');
+    section.setAttribute('class', 'popup-card');
 
     const h1 = document.createElement('h1');
-    h1.textContent = cardData.title;
+    h1.textContent = 'Tonic';
     section.appendChild(h1);
 
     const div = document.createElement('div');
-    div.setAttribute('class', 'xp');
+    div.setAttribute('class', 'popup-xp');
     section.appendChild(div);
 
     const p = document.createElement('p');
@@ -185,27 +185,92 @@ cardsData.forEach((cardData, index) => {
     ul.appendChild(li2);
 
     const img = document.createElement('img');
-    img.setAttribute('src', cardData.img);
+    img.setAttribute('src', './assets/images/popup.png');
     section.appendChild(img);
 
     const projectInfo = document.createElement('p');
-    projectInfo.setAttribute('class', 'project-info');
-    projectInfo.textContent = cardData.projectInfo;
+    projectInfo.setAttribute('class', 'popup-project-info');
+
+    const windowWidth = window.innerWidth || document.documentElement.clientWidth
+    || document.body.clientWidth;
+
+    if (windowWidth < 768) {
+      projectInfo.innerHTML = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it 1960s. Lorem Ipsum is simply dummy text of the printing and typesetting industry.';
+    } else {
+      projectInfo.innerHTML = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it 1960s. Lorem Ipsum is simply dummy text of the printing and typesetting industry.<br><br>Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it 1960s with the releorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum han printer took a galley of type and scrambled it 1960s with the releawn printer took a galley of type and scrambled it 1960s';
+    }
     section.appendChild(projectInfo);
 
     const skills = document.createElement('ul');
-    skills.setAttribute('class', 'skills');
+    skills.setAttribute('class', 'popup-skills');
     section.appendChild(skills);
 
     cardData.skills.forEach((skill) => {
       const skillItem = document.createElement('li');
-      skillItem.setAttribute('class', 'sbox');
+      skillItem.setAttribute('class', 'popup-sbox');
       skillItem.textContent = skill;
       skills.appendChild(skillItem);
     });
 
+    // Create the parent div element
+    const buttonDiv = document.createElement('div');
+    buttonDiv.setAttribute('class', 'popup-btn');
+
+    // Create the "See Live" button
+    const seeLiveBtn = document.createElement('input');
+    seeLiveBtn.setAttribute('class', 'popup-btn1');
+    seeLiveBtn.setAttribute('type', 'button');
+    seeLiveBtn.setAttribute('value', 'See live');
+
+    // Create the "See Source" button
+    const seeSourceBtn = document.createElement('input');
+    seeSourceBtn.setAttribute('class', 'popup-btn2');
+    seeSourceBtn.setAttribute('type', 'button');
+    seeSourceBtn.setAttribute('value', 'See source');
+
+    // Create the image for the "See Live" button
+    const liveImage = document.createElement('img');
+    liveImage.setAttribute('src', './assets/images/button1.png');
+    liveImage.setAttribute('alt', 'Live Image');
+
+    // Create the image for the "See Source" button
+    const sourceImage = document.createElement('img');
+    sourceImage.setAttribute('src', './assets/images/button2.png');
+    sourceImage.setAttribute('alt', 'Source Image');
+
+    // Create a span for the text next to the "See Live" button
+    const liveTextSpan = document.createElement('span');
+    liveTextSpan.textContent = 'See live';
+
+    // Create a span for the text next to the "See Source" button
+    const sourceTextSpan = document.createElement('span');
+    sourceTextSpan.textContent = 'See source';
+
+    // Append the image and text to the "See Live" button
+    seeLiveBtn.appendChild(liveImage);
+    seeLiveBtn.appendChild(liveTextSpan);
+
+    // Append the image and text to the "See Source" button
+    seeSourceBtn.appendChild(sourceImage);
+    seeSourceBtn.appendChild(sourceTextSpan);
+
+    // Apply CSS styles to the images
+    liveImage.style.display = 'block'; // Set display to block
+    liveImage.style.width = '100%'; // Adjust width as needed
+    liveImage.style.height = 'auto'; // Adjust height as needed
+
+    sourceImage.style.display = 'block'; // Set display to block
+    sourceImage.style.width = '100%'; // Adjust width as needed
+    sourceImage.style.height = 'auto'; // Adjust height as needed
+    // Append both buttons to the div
+    buttonDiv.appendChild(seeLiveBtn);
+    buttonDiv.appendChild(seeSourceBtn);
+
+    // Append the div to the section element
+    section.appendChild(buttonDiv);
+
     const closeButton = document.createElement('div');
-    closeButton.setAttribute('class', 'close-button');
+    closeButton.setAttribute('class', 'popup-close-button');
     closeButton.textContent = 'X';
     section.appendChild(closeButton);
 
