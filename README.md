@@ -53,7 +53,7 @@
 
 > Below is a link to my deployed project.
 
-- [Live Demo Link](https://malikhaiderkhan.github.io/Portfolio-Mobile-First/)
+- [Live Demo Link](https://malikhaiderkhan.github.io/Portfolio/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
