@@ -30,7 +30,7 @@ const cardsData = [
   {
     id: 'portfolio1',
     class: 'card',
-    img: './assets/images/card1.png',
+    img: './assets/images/shot1.png',
     imgAlt: 'card1',
     title: 'Tonic',
     xpInfo: {
@@ -185,7 +185,7 @@ cardsData.forEach((cardData, index) => {
     ul.appendChild(li2);
 
     const img = document.createElement('img');
-    img.setAttribute('src', './assets/images/popup.png');
+    img.setAttribute('src', './assets/images/shot1.png');
     section.appendChild(img);
 
     const projectInfo = document.createElement('p');
@@ -265,6 +265,18 @@ cardsData.forEach((cardData, index) => {
     // Append both buttons to the div
     buttonDiv.appendChild(seeLiveBtn);
     buttonDiv.appendChild(seeSourceBtn);
+
+    // Event listener for the "See Live" button
+seeLiveBtn.addEventListener('click', () => {
+  // Navigate to the live site URL
+  window.location.href = 'https://malikhaiderkhan.github.io/Portfolio/';
+});
+
+// Event listener for the "See Source" button
+seeSourceBtn.addEventListener('click', () => {
+  // Navigate to the source code URL
+  window.location.href = 'https://github.com/malikhaiderkhan/Portfolio';
+});
 
     // Append the div to the section element
     section.appendChild(buttonDiv);
